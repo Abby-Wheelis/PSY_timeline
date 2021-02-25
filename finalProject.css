@@ -1,6 +1,6 @@
 #tooltip {
   position: absolute;
-  width: 200px;
+  width: 350px;
   height: auto;
   padding: 10px;
   background-color: darkseagreen;
@@ -8,4 +8,24 @@
 
 #tooltip.hidden {
   display: none;
+}
+
+.labels {
+  color: black;
+  size: 12px;
+}
+
+#body {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  background-color: aliceblue;
+}
+
+h1 {
+  color: navy;
+}
+
+body {
+  background-color: whitesmoke;
 }
