@@ -83,15 +83,13 @@ var timelineSetup = function () {
   //axis
   var yAxis = d3.axisLeft().scale(tScale).tickFormat(d3.format("d")).ticks(16);
 
-  var svg = d3
-    .select("#Time")
+  var svg = d3.select("#Time")
     .append("svg")
     .attr("class", "timeline")
     .attr("width", tScreen.width)
     .attr("height", tScreen.height);
 
-  svg
-    .append("g")
+  svg.append("g")
     .attr("id", "Axis")
     .attr(
       "transform",
@@ -99,8 +97,7 @@ var timelineSetup = function () {
     )
     .call(yAxis); //need new axis setups
 
-  svg
-    .append("text")
+  svg.append("text")
     .attr(
       "transform",
       "translate(" +
