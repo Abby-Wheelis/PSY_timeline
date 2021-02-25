@@ -21,53 +21,6 @@ when you hover all the other stuff pops up
 and bam you did it girlie
 */
 
-/*
-//make school lil infos
-var layTimeline = function(dataArray, yScale)
-{
-            
-    var school = d3.select("#scatterplot")        
-    .selectAll("circle")
-    .data(dataArray)
-                        
-    spots.transition()
-    .duration(1000)
-    .attr("cx", function(d)
-    {
-        return xScale(d.X)
-    }) 
-    .attr("cy", function(d)
-    {
-        return yScale(d.Y)
-    })
-    .attr("r", function(d)
-    {
-        return rScale(d.R)
-    })
-    .attr("fill", function(d)
-    {
-        return cScale(d.Name)
-    })
-    spots.on("mouseover", function(d)
-        {   
-            var xPosition = d3.event.pageX; //add later to tweak
-            var yPosition = d3.event.pageY;
-
-            var tooltip = d3.select("#tooltip")
-            .style("left", xPosition + "px")
-            .style("top", yPosition + "px")
-            .select("#name")
-            .text(d.Name + ": " + d.R + " %")
-
-            d3.select("#tooltip").classed("hidden", false);
-        })
-    .on("mouseout", function()
-        {
-            d3.select("#tooltip")
-            .classed("hidden", true);
-        })
-}
-*/
 var getSchool = function (school) {
   Name = school.School;
   return Name;
@@ -87,15 +40,13 @@ var timelineSetup = function (psyData) {
 
   //axis
   var yAxis = d3.axisLeft().scale(tScale).tickFormat(d3.format("d")).ticks(16);
-    .attr("height", tScreen.height);
 
   var svg = d3
     .select("#Time")
     .append("svg")
     .attr("class", "timeline")
     .attr("width", tScreen.width)
-    .attr("height", tScreen.height);
-    .call(yAxis); //need new axis setups
+    .attr("height", tScreen.height); //need new axis setups
 
   svg
     .append("g")
@@ -150,3 +101,4 @@ var timelineSetup = function (psyData) {
   }).on("mouseout", function () {
     d3.select("#tooltip").classed("hidden", true);
   });
+};
